@@ -1,0 +1,31 @@
+{
+  "name": "loubfy-os-content-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render:image": "tsx scripts/generated/render-image.ts",
+    "render:video": "tsx scripts/generated/render-video.ts",
+    "validate:post": "tsx scripts/generated/validate-post.ts",
+    "account:create": "tsx scripts/generated/create-account.ts",
+    "demo:image": "npm run render:image -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
+    "demo:video": "npm run render:video -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.462",
+    "@remotion/media": "^4.0.462",
+    "playwright": "^1.60.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "remotion": "^4.0.462",
+    "tsx": "^4.21.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
