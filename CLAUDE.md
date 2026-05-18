@@ -1,9 +1,28 @@
 # Claude Code Guide
 
-Read `AGENTS.md` first. It is the source of truth for this project.
+`AGENTS.md` is the source of truth for this project. Read it before changing files.
 
-Loubfy OS is a reusable social media and blogpost content operating system guided by AI agents. Loubfy OS is the project/product name, not the onboarded business name. Use the skills in `skills/{skill-name}/SKILL.md`, save content under `content/`, store image assets under `images/`, and follow the guidelines in `guidelines/`.
+Loubfy OS is a reusable social media and blogpost content operating system guided by AI agents. Loubfy OS is the project/product name, not the onboarded business name.
 
-If Claude subagents are available, use them only for independent subtasks and follow `workflows/agent-orchestration.md`. If they are not available, simulate the same roles sequentially with the relevant skills.
+## First actions in a session
+
+1. Read `AGENTS.md`.
+2. Read `memory/project-state.yml`. If `loubfy_os_initialized` is not `true` and the user wants to start, run the `onboarding` skill (or `/onboarding`).
+3. For the task at hand, read the relevant `context/`, `guidelines/`, `brand/`, and `skills/{skill-name}/SKILL.md` files.
+
+## Native Claude layer
+
+This repo ships an additive `.claude/` layer. It only points back to the agnostic sources — it never forks them. Other agents (Codex, Gemini, OpenCode, Hermes) ignore `.claude/` entirely.
+
+- `.claude/skills/` — a symlink to the agnostic `skills/` source, so skills trigger natively. **Never edit files under `.claude/skills/`; edit `skills/`.** If the link is broken (e.g. on Windows), run `npm run setup:claude`.
+- `.claude/agents/` — the `agents/roster/` roles exposed as real subagents. Each one reads its role card in `agents/roster/` plus its `SKILL.md`.
+- `.claude/commands/onboarding.md` — registers `/onboarding`.
+- `.claude/settings.json` — permission allowlist for project npm scripts, plus a `PreToolUse` hook that asks for confirmation before any edit inside `references/templates/` (protected source-of-truth templates).
+
+## Subagents
+
+Claude Code subagents are available. Use them only for independent subtasks that can run in parallel, following `workflows/agent-orchestration.md`. The main agent is editor-in-chief: it routes work, consolidates outputs, protects file boundaries, and runs the final QA pass. If a task fits one skill, use the skill directly — do not spawn a subagent.
+
+## Conflicts
 
 If any instruction here conflicts with `AGENTS.md`, follow `AGENTS.md`.

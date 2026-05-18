@@ -9,6 +9,9 @@ public/loubfy-render-assets/
 dist/
 coverage/
 
+# Personal Claude Code overrides (the shared .claude/ layer is committed).
+.claude/settings.local.json
+
 # This repository ships the OS, renderer, and template references, not posts.
 content/social-media/*/*/
 content/blogposts/*/

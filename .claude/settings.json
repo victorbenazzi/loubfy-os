@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run validate:post:*)",
+      "Bash(npm run render:image:*)",
+      "Bash(npm run render:video:*)",
+      "Bash(npm run account:create:*)",
+      "Bash(npm run skills:list)",
+      "Bash(npm run setup:claude)",
+      "Bash(npx skills add:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/protect-templates.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -27,6 +27,16 @@ When instructions conflict, follow this order:
 3. Relevant skill in `skills/{skill-name}/SKILL.md`.
 4. Folder-specific context files.
 
+## Native Agent Layers
+
+The authoritative, agent-agnostic sources are `AGENTS.md`, `skills/{skill-name}/SKILL.md`, and `agents/roster/`. Every agent can use them by reading the files directly.
+
+Some interfaces also support native skills, subagents, slash commands, and hooks. This repo ships per-agent layers that are purely additive — an agent that does not support a layer simply ignores it:
+
+- `.claude/` for Claude Code. `.claude/skills/` is a symlink to `skills/`, `agents/roster/` roles are exposed as subagents in `.claude/agents/`, `/onboarding` is registered in `.claude/commands/`, and `.claude/settings.json` adds a hook that protects `references/templates/`.
+
+Per-agent layers must only point back to the agnostic sources, never fork them. Edit `skills/` and `agents/roster/`, never their mirrors. To install skills into another agent, use `npx skills add . --agent <name> --copy`.
+
 ## Root Structure
 
 ```text

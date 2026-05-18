@@ -151,6 +151,15 @@ Agent instructions live in:
 - `CLAUDE.md` for Claude Code.
 - `GEMINI.md` for Gemini-style agents.
 
+The authoritative sources are `AGENTS.md`, `skills/{skill-name}/SKILL.md`, and `agents/roster/`. Any agent can use them by reading the files directly — no install required.
+
+For native skill/subagent/command support:
+
+- **Claude Code** works with no setup — this repo ships an additive `.claude/` layer. If its skills link is broken (mainly on Windows), run `npm run setup:claude`.
+- **Other agents** can install the skills natively with `npx skills add . --agent <codex|gemini|...> --copy`.
+
+These layers only point back to the agnostic sources; they never fork them.
+
 Before strategic content work, agents should check:
 
 ```text
