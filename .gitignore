@@ -3,3 +3,8 @@ node_modules/
 public/loubfy-render-assets/
 *.log
 .DS_Store
+.env
+.env.*
+!.env.example
+dist/
+coverage/

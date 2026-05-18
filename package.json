@@ -1,8 +1,12 @@
 {
   "name": "loubfy-os-content-renderer",
   "version": "0.1.0",
+  "description": "Reusable AI-agent content operating system and social content renderer.",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "render:image": "tsx scripts/generated/render-image.ts",
     "render:video": "tsx scripts/generated/render-video.ts",
@@ -10,7 +14,8 @@
     "account:create": "tsx scripts/generated/create-account.ts",
     "demo:image": "npm run render:image -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
     "demo:video": "npm run render:video -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "skills:list": "npx skills add . --list"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.462",
