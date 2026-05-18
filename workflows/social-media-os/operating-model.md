@@ -108,7 +108,7 @@ Use slugs em ingles ou portugues sem acento, sempre em kebab-case.
 Exemplo:
 
 ```text
-claude-ai-vs-cowork-vs-code
+comparativo-ferramentas-ia
 ```
 
 ## Proxima etapa

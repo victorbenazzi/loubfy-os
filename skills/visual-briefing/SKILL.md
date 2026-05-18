@@ -66,3 +66,9 @@ Read brand guidelines and content context:
 ## References
 
 Read `references/image-prompting.md` for prompt structure and `references/platform-sizes.md` for common sizes.
+
+For Instagram editorial image/carousel templates, also read `references/styles/instagram-editorial-templates.md`.
+
+When using `references/templates/instagram-editorial/`, treat it as the protected source of truth: use those files only as layout references and create new work in the relevant `content/social-media/instagram/{accountId}/{slug}/` folder. Do not edit or overwrite template-source files unless the user explicitly asks for a template update.
+
+For side-by-side Instagram comparisons, use `references/templates/instagram-comparison/` as the protected source of truth and `template: "instagram-comparison"` with `layout: "ig-comparison-split"`.

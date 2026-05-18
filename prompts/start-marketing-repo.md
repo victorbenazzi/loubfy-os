@@ -9,7 +9,7 @@ Objetivo:
 - Baixe ou clone o repositório.
 - Leia AGENTS.md antes de alterar qualquer arquivo.
 - Instale as dependências do projeto.
-- Verifique se o pipeline de posts por HTML/React está funcionando.
+- Verifique o typecheck do pipeline de posts por HTML/React.
 - Configure as contas sociais usando accountId.
 
 Contas iniciais:
@@ -28,6 +28,5 @@ Regras:
 Comandos esperados:
 - npm install
 - npm run typecheck
-- npm run validate:post -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json
 - npm run account:create -- --platform <platform> --account-id <account-id> --display-name "<nome-da-conta>" --notes "<papel-da-conta>"
 ```

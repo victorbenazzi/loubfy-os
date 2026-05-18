@@ -141,12 +141,7 @@ Render a video:
 npm run render:video -- --input content/social-media/linkedin/principal/example/post.json
 ```
 
-Run the included demo:
-
-```bash
-npm run demo:image
-npm run demo:video
-```
+This template repository does not ship posts under `content/`. Create a post in a new `content/social-media/{platform}/{accountId}/{slug}/` folder before running the render commands.
 
 ## Agent Instructions
 
@@ -168,8 +163,8 @@ If `loubfy_os_initialized` is not `true`, use the onboarding skill before produc
 
 Before sharing the repository publicly or turning it into a template:
 
-- Remove private client/company data from `context/`, `brand/`, `memory/`, and `content/`.
-- Keep only demo content that is clearly reusable.
+- Remove private client/company data from `context/`, `brand/`, and `memory/`.
+- Keep `content/` empty except for `.gitkeep` files; canonical visual templates live in `references/templates/`.
 - Remove secrets, API keys, cookies, and local environment files.
 - Keep generated final assets only when they are part of the public demo.
 - Choose and add a license if other people are allowed to use, modify, or redistribute the project.

@@ -1,0 +1,44 @@
+{
+  "template": "instagram-editorial",
+  "status": "source-of-truth",
+  "protected": true,
+  "rule": "Use these images as template references only. Do not edit, overwrite, regenerate, delete, recolor, crop, rename, or replace them unless the user explicitly asks to alter this source of truth or create a new template version.",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "safeArea": {
+    "top": 60,
+    "bottom": 60,
+    "left": 40,
+    "right": 40
+  },
+  "font": "Inter",
+  "defaultPalette": {
+    "primary": "#050505",
+    "secondary": "#FFFFFF",
+    "accent": "#FFFFFF",
+    "background": "#FFFFFF",
+    "surface": "#F4F4F4",
+    "text": "#050505",
+    "muted": "#5C5C5C"
+  },
+  "layouts": [
+    {
+      "id": "ig-cover-overlay",
+      "reference": "01-cover-overlay.png",
+      "usage": "Carousel cover or single-image editorial post."
+    },
+    {
+      "id": "ig-editorial-media",
+      "reference": "02-editorial-media.png",
+      "usage": "Explanation slide with headline, media frame, and body text."
+    },
+    {
+      "id": "ig-photo-essay",
+      "reference": "03-photo-essay.png",
+      "usage": "Narrative slide with full-bleed image and lower text overlay."
+    }
+  ],
+  "productionRule": "New posts must be created in content/social-media/instagram/{accountId}/{slug}/ and rendered from a new post.json."
+}

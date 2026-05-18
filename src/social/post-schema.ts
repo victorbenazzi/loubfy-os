@@ -71,24 +71,54 @@ const mediaSchema = z.object({
 });
 
 export const slideSchema = z.object({
+  layout: z
+    .enum([
+      "default",
+      "ig-cover-overlay",
+      "ig-comparison-split",
+      "ig-editorial-media",
+      "ig-photo-essay",
+    ])
+    .default("default"),
   eyebrow: z.string().optional(),
   title: z.string().min(1),
   body: z.string().optional(),
   bullets: z.array(z.string()).default([]),
   cta: z.string().optional(),
   media: mediaSchema.optional(),
+  comparison: z
+    .object({
+      left: z.object({
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        subtitle: z.string().optional(),
+        body: z.string().optional(),
+        badge: z.string().optional(),
+        bullets: z.array(z.string()).default([]),
+      }),
+      right: z.object({
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        subtitle: z.string().optional(),
+        body: z.string().optional(),
+        badge: z.string().optional(),
+        bullets: z.array(z.string()).default([]),
+      }),
+      verdict: z.string().optional(),
+    })
+    .optional(),
   accent: z.string().optional(),
 });
 
 const defaultBrand = {
   name: "Loubfy OS",
-  primary: "#1D4ED8",
-  secondary: "#0F766E",
-  accent: "#F59E0B",
-  background: "#F8FAFC",
-  surface: "#FFFFFF",
-  text: "#0F172A",
-  muted: "#475569",
+  primary: "#050505",
+  secondary: "#FFFFFF",
+  accent: "#FFFFFF",
+  background: "#FFFFFF",
+  surface: "#F4F4F4",
+  text: "#050505",
+  muted: "#5C5C5C",
   fontFamily: "Inter, Arial, sans-serif",
 };
 
@@ -113,6 +143,8 @@ export const postSchema = z.object({
     "authority-card",
     "authority-carousel",
     "checklist-carousel",
+    "instagram-comparison",
+    "instagram-editorial",
     "video-briefing",
   ]),
   dimensions: dimensionsSchema,

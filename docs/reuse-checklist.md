@@ -66,12 +66,7 @@ npm run typecheck
 npm run account:create -- --platform linkedin --account-id principal
 ```
 
-Optional demo checks:
-
-```bash
-npm run demo:image
-npm run demo:video
-```
+This reusable repository should not ship example posts under `content/`. Validate rendering only after creating a new post in a project-specific content folder.
 
 ## 6. Validate Agent Entry Points
 
