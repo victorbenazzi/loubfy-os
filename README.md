@@ -1,5 +1,7 @@
 # Loubfy OS
 
+🇧🇷 [Versão em português](README.pt-BR.md)
+
 Loubfy OS is a reusable content operating system for social media and blog production with AI agents.
 
 It stores brand context, audience research, editorial rules, visual references, content drafts, renderable assets, workflow docs, and reusable skills for any business, creator, page, or client configured through onboarding.
@@ -34,7 +36,7 @@ npm run typecheck
 Then ask your agent:
 
 ```text
-Leia AGENTS.md e execute o onboarding para configurar este projeto.
+Read AGENTS.md and run onboarding to configure this project.
 ```
 
 If you are using Claude Code, ask it to read `CLAUDE.md`. If you are using Gemini-style agents, ask them to read `GEMINI.md`.
@@ -182,8 +184,8 @@ Create a managed social account folder and its context file:
 npm run account:create -- \
   --platform linkedin \
   --account-id principal \
-  --display-name "Perfil Principal" \
-  --notes "Conta principal da marca"
+  --display-name "Main Profile" \
+  --notes "Brand's main account"
 ```
 
 This creates:
