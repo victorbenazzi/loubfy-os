@@ -14,7 +14,8 @@
     "account:create": "tsx scripts/generated/create-account.ts",
     "typecheck": "tsc --noEmit",
     "skills:list": "npx skills add . --list",
-    "setup:claude": "node scripts/automations/setup-claude-layer.mjs"
+    "setup:claude": "node scripts/automations/setup-claude-layer.mjs",
+    "postinstall": "node scripts/automations/setup-claude-layer.mjs"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.462",

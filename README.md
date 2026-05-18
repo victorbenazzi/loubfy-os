@@ -155,7 +155,7 @@ The authoritative sources are `AGENTS.md`, `skills/{skill-name}/SKILL.md`, and `
 
 For native skill/subagent/command support:
 
-- **Claude Code** works with no setup — this repo ships an additive `.claude/` layer. If its skills link is broken (mainly on Windows), run `npm run setup:claude`.
+- **Claude Code** works after `npm install` on macOS, Linux, and Windows — this repo ships an additive `.claude/` layer, and `npm install` links `.claude/skills/` to the `skills/` source automatically. If skills are missing, run `npm run setup:claude`.
 - **Other agents** can install the skills natively with `npx skills add . --agent <codex|gemini|...> --copy`.
 
 These layers only point back to the agnostic sources; they never fork them.

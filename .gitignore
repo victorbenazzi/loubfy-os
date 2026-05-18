@@ -11,6 +11,9 @@ coverage/
 
 # Personal Claude Code overrides (the shared .claude/ layer is committed).
 .claude/settings.local.json
+# .claude/skills is a generated link to skills/ (rebuilt by `npm install`).
+# Not committed: a symlink does not survive a Windows checkout cleanly.
+.claude/skills
 
 # This repository ships the OS, renderer, and template references, not posts.
 content/social-media/*/*/
