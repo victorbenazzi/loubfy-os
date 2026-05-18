@@ -12,8 +12,6 @@
     "render:video": "tsx scripts/generated/render-video.ts",
     "validate:post": "tsx scripts/generated/validate-post.ts",
     "account:create": "tsx scripts/generated/create-account.ts",
-    "demo:image": "npm run render:image -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
-    "demo:video": "npm run render:video -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json",
     "typecheck": "tsc --noEmit",
     "skills:list": "npx skills add . --list"
   },

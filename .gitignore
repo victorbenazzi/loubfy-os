@@ -8,3 +8,8 @@ public/loubfy-render-assets/
 !.env.example
 dist/
 coverage/
+
+# This repository ships the OS, renderer, and template references, not posts.
+content/social-media/*/*/
+content/blogposts/*/
+content/newsletters/*/

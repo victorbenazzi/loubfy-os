@@ -143,7 +143,7 @@ final/
 Use kebab-case for slugs:
 
 ```text
-claude-ai-vs-cowork-vs-code
+comparativo-ferramentas-ia
 ```
 
 ## Context Files
@@ -195,9 +195,20 @@ npx skills add . --list
 - Store editable or in-progress visuals in `images/working/`.
 - Store final exported images in `images/exports/`.
 - Store inspiration and examples in `references/`, not `images/`.
+- Store canonical template examples in `references/templates/`.
 - Do not generate final images unless the user explicitly asks for image generation.
 - For carousels, keep text/layout separate from generated background art whenever possible.
 - Use real screenshots for real product UI. Do not ask image models to invent product screens.
+
+## Template Source Of Truth
+
+Files under `references/templates/` are canonical template references.
+
+- Use them only as visual/layout templates for new work.
+- Do not edit, overwrite, regenerate, delete, recolor, crop, rename, or replace them unless the user explicitly asks to alter the template source of truth or create a new template version from it.
+- New posts and carousels must be created under `content/social-media/{platform}/{accountId}/{slug}/`.
+- For Instagram editorial posts, use `references/templates/instagram-editorial/` as the source of truth and create new renders through `template: "instagram-editorial"` in the new post's `post.json`.
+- For Instagram comparison posts, use `references/templates/instagram-comparison/` as the source of truth and create new renders through `template: "instagram-comparison"` and `layout: "ig-comparison-split"` in the new post's `post.json`.
 
 ## References
 
@@ -205,6 +216,7 @@ Use `references/` for examples and inspiration:
 
 ```text
 references/styles/       Visual styles, moodboards, layout references.
+references/templates/    Protected source-of-truth template examples.
 references/posts/        Posts, carousels, threads, captions, screenshots.
 references/content/      Articles, frameworks, research excerpts, source notes.
 references/screenshots/  UI screenshots or platform screenshots used as reference.

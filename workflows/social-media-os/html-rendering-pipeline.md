@@ -31,9 +31,9 @@ content/social-media/{platform}/{accountId}/{slug}/final/
 Comandos:
 
 ```bash
-npm run validate:post -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json
-npm run render:image -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json
-npm run render:video -- --input content/social-media/linkedin/loubfy-os/html-render-pipeline-demo/post.json
+npm run validate:post -- --input content/social-media/{platform}/{accountId}/{slug}/post.json
+npm run render:image -- --input content/social-media/{platform}/{accountId}/{slug}/post.json
+npm run render:video -- --input content/social-media/{platform}/{accountId}/{slug}/post.json
 ```
 
 ## Contas e Perfis
@@ -70,6 +70,20 @@ Templates devem ser parametrizados por estrutura editorial, não por marca fixa:
 - `authority-card`;
 - `authority-carousel`;
 - `checklist-carousel`;
+- `instagram-comparison`;
+- `instagram-editorial`;
 - `video-briefing`.
 
 As cores, fonte e nome vêm de `post.brand` e futuramente podem ser preenchidos a partir de `brand/design-system.md`.
+
+Para Instagram, a família `instagram-editorial` usa `dimensions` de 1080 x 1350 px e permite escolher o layout por slide:
+
+- `ig-cover-overlay`: imagem full-bleed com filtro escuro, perfil central, título grande e apoio;
+- `ig-editorial-media`: fundo sólido, headline grande, imagem em frame e texto inferior;
+- `ig-photo-essay`: imagem full-bleed com gradiente inferior, marcador circular e texto editorial.
+
+A análise visual completa fica em `references/styles/instagram-editorial-templates.md`.
+
+Os exemplos canônicos do template ficam em `references/templates/instagram-editorial/`. Trate essa pasta como fonte da verdade: use apenas como referência visual/layout e não altere seus arquivos sem pedido explícito do usuário. Novos posts devem ser criados e renderizados em `content/social-media/instagram/{accountId}/{slug}/`.
+
+Para comparativos em Instagram, use a família `instagram-comparison` com o layout `ig-comparison-split`. Ela serve para comparar ferramentas, IAs, soluções, linguagens, serviços ou produtos físicos em dois lados. O conteúdo comparativo deve entrar no campo estruturado `slide.comparison.left` e `slide.comparison.right`, não como texto solto. Os exemplos canônicos ficam em `references/templates/instagram-comparison/` e seguem a mesma regra de fonte da verdade protegida.

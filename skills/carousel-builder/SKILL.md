@@ -66,3 +66,7 @@ Visual note:
 ## References
 
 Read `references/structures.md` for slide patterns.
+
+For Instagram editorial carousels, use `references/templates/instagram-editorial/` as the protected template source of truth and `references/styles/instagram-editorial-templates.md` for layout rules. Do not edit template-source files unless the user explicitly asks for a template update; create new carousel content under `content/social-media/instagram/{accountId}/{slug}/`.
+
+For Instagram comparison carousels, use `references/templates/instagram-comparison/` as the protected template source of truth. Use `template: "instagram-comparison"`, `layout: "ig-comparison-split"`, and put the two sides in `slide.comparison.left` and `slide.comparison.right`.
